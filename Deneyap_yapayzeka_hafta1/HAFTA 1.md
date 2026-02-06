@@ -14,6 +14,7 @@ curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe --
 Yükleme tamamlanınca %100 olur.
 
 ![[Pasted image 20251216143350.png]]
+![](Pasted image 20251216143350.png)
 
 Yüklenen exe'nin çalıştırılması.
 
