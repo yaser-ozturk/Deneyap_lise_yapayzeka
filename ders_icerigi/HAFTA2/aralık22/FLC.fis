@@ -1,0 +1,60 @@
+[System]
+Name='FLC'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=8
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-5 5]
+NumMFs=7
+MF1='tooDeep':'trapmf',[-7.15 -5.32 -2.9 -2.1]
+MF2='slightDeep':'trimf',[-3 -2 -1]
+MF3='Deep':'trimf',[-2 -1 0]
+MF4='RigtOn':'trimf',[-1.01626016260163 -0.0162601626016254 0.983739837398375]
+MF5='shallow':'trimf',[0 1 2]
+MF6='slightShallow':'trimf',[1 2 3]
+MF7='tooShallow':'trapmf',[2 3 5.04 6.57]
+
+[Input2]
+Name='input2'
+Range=[-0.6 0.6]
+NumMFs=7
+MF1='detooslow':'trimf',[-0.3 -0.2 0]
+MF2='asctooSlow':'trimf',[0.001951 0.202 0.302]
+MF3='DEfast':'trapmf',[-0.641 -0.63 -0.4 -0.3]
+MF4='deslow':'trimf',[-0.4 -0.3 -0.2]
+MF5='sature':'trimf',[-0.2 0 0.2]
+MF6='ascslow':'trimf',[0.2 0.3 0.4]
+MF7='ascfast':'trapmf',[0.3 0.4 0.8 1.39]
+
+[Output1]
+Name='output1'
+Range=[-12 12]
+NumMFs=9
+MF1='negatinyN':'trimf',[-4 -2 0]
+MF2='stateN':'trimf',[-2 0 2]
+MF3='tineyN':'trimf',[0 2 4]
+MF4='negagianN':'trimf',[-8 -6 -4]
+MF5='negatihighN':'trimf',[-6 -4 -2]
+MF6='highN':'trimf',[2 4 6]
+MF7='NegaMoreN':'trapmf',[-18 -12 -8 -6]
+MF8='giantN':'trimf',[4 6 8]
+MF9='MoreHighN':'trapmf',[6 8 12 18]
+
+[Rules]
+7 3, 9 (1) : 1
+7 4, 9 (1) : 1
+7 1, 8 (1) : 1
+7 5, 6 (1) : 1
+7 2, 3 (1) : 1
+7 6, 3 (1) : 1
+7 7, 3 (1) : 1
+6 3, 2 (1) : 1

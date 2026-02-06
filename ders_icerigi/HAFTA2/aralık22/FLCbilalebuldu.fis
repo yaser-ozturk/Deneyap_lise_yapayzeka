@@ -1,0 +1,73 @@
+[System]
+Name='FLCbilalebuldu'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-5 5]
+NumMFs=5
+MF1='NB':'trapmf',[-8 -6 -4 -2]
+MF2='NS':'trimf',[-4 -2 0]
+MF3='Z':'trimf',[-2 -0 2]
+MF4='PS':'trimf',[0 2 4]
+MF5='PB':'trapmf',[2 4 6 8]
+
+[Input2]
+Name='input2'
+Range=[-0.6 0.6]
+NumMFs=5
+MF1='NS':'trimf',[-0.4 -0.2 0]
+MF2='PS':'trimf',[0 0.202 0.4]
+MF3='NB':'trapmf',[-0.641 -0.63 -0.4 -0.2]
+MF4='Z':'trimf',[-0.2 0 0.2]
+MF5='PB':'trapmf',[0.2 0.4 0.8 1.39]
+
+[Output1]
+Name='output1'
+Range=[-12 12]
+NumMFs=9
+MF1='NS':'trimf',[-4 -2 0]
+MF2='Z':'trimf',[-2 0 2]
+MF3='PS':'trimf',[0 2 4]
+MF4='NB':'trimf',[-8 -6 -4]
+MF5='NM':'trimf',[-6 -4 -2]
+MF6='PM':'trimf',[2 4 6]
+MF7='NVB':'trapmf',[-18 -12 -8 -6]
+MF8='PB':'trimf',[4 6 8]
+MF9='PVB':'trapmf',[6 8 12 18]
+
+[Rules]
+1 3, 7 (1) : 1
+1 1, 4 (1) : 1
+1 4, 5 (1) : 1
+1 2, 1 (1) : 1
+1 5, 2 (1) : 1
+2 3, 4 (1) : 1
+2 1, 5 (1) : 1
+2 4, 1 (1) : 1
+2 2, 2 (1) : 1
+2 5, 3 (1) : 1
+3 3, 5 (1) : 1
+3 1, 1 (1) : 1
+3 4, 2 (1) : 1
+3 2, 3 (1) : 1
+3 5, 6 (1) : 1
+4 3, 1 (1) : 1
+4 1, 2 (1) : 1
+4 4, 3 (1) : 1
+4 2, 6 (1) : 1
+4 5, 8 (1) : 1
+5 3, 2 (1) : 1
+5 1, 3 (1) : 1
+5 4, 6 (1) : 1
+5 2, 8 (1) : 1
+5 5, 9 (1) : 1
